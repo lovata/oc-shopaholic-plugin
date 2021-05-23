@@ -14,18 +14,18 @@ class ParseCategoryXMLNode extends ParseXMLNode
      * @param string $sFieldPath
      * @return array
      */
-    protected function parseChildrenAttribute($sFieldPath)
+    protected function parseChildrenAttribute($sFieldPath, $sPrefix = null, $sNamespace = null)
     {
         $arResult = [];
 
         //Get children node list
-        $arNodeList = $this->obElementNode->findListByPath($sFieldPath);
+        $arNodeList = $this->obElementNode->findListByPath($sFieldPath, $sPrefix, $sNamespace);
         if (empty($arNodeList)) {
             return $arResult;
         }
 
         foreach ($arNodeList as $obCategoryNode) {
-            $obParseNode = new ParseCategoryXMLNode($obCategoryNode, $this->arImportSettings);
+            $obParseNode = new ParseCategoryXMLNode($obCategoryNode, $this->arImportSettings, $sPrefix, $sNamespace);
             $arResult[] = $obParseNode->get();
         }
 
