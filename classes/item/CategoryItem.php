@@ -107,7 +107,7 @@ class CategoryItem extends ElementItem
      *
      * @return string
      */
-    public function getPageUrl($sPageCode = null, $arRemoveParamList = [])
+    public function getPageUrl($sPageCode = null, $arRemoveParamList = [], $arAddParamList = [])
     {
         if (empty($sPageCode)) {
             $sPageCode = Settings::getValue('default_category_page_id', 'catalog');
@@ -115,6 +115,10 @@ class CategoryItem extends ElementItem
 
         //Get URL params
         $arParamList = $this->getPageParamList($sPageCode, $arRemoveParamList);
+
+        if (!empty($arAddParamList)) {
+            $arParamList = array_merge($arParamList, $arAddParamList);
+        }
 
         //Generate page URL
         $sURL = CmsPage::url($sPageCode, $arParamList);
