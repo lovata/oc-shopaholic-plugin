@@ -87,6 +87,28 @@ tabs:
             tab: lovata.shopaholic::lang.tab.import_setting
             type: checkbox
             span: right
+        hide_brand_export_in_csv:
+            label: lovata.shopaholic::lang.field.hide_brand_export_in_csv
+            tab: lovata.shopaholic::lang.tab.export_setting
+            type: checkbox
+            span: left
+        hide_category_export_in_csv:
+            label: lovata.shopaholic::lang.field.hide_category_export_in_csv
+            tab: lovata.shopaholic::lang.tab.export_setting
+            type: checkbox
+            span: left
+            order: 5
+        hide_product_export_in_csv:
+            label: lovata.shopaholic::lang.field.hide_product_export_in_csv
+            tab: lovata.shopaholic::lang.tab.export_setting
+            type: checkbox
+            span: left
+            order: 2
+        hide_offer_export_in_csv:
+            label: lovata.shopaholic::lang.field.hide_offer_export_in_csv
+            tab: lovata.shopaholic::lang.tab.export_setting
+            type: checkbox
+            span: left
         default_product_page_id:
             label: lovata.shopaholic::lang.field.default_product_page
             tab: lovata.shopaholic::lang.tab.page_settings

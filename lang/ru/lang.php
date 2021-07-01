@@ -35,12 +35,16 @@
 
         'hide_brand_import_from_csv'    => 'Скрыть кнопку "Импорт из CSV" для брендов',
         'hide_brand_import_from_xml'    => 'Скрыть кнопку "Импорт из XML" для брендов',
+        'hide_brand_export_in_csv'      => 'Скрыть кнопку "Экспорт в CSV" для брендов',
         'hide_category_import_from_csv' => 'Скрыть кнопку "Импорт из CSV" для категорий',
         'hide_category_import_from_xml' => 'Скрыть кнопку "Импорт из XML" для категорий',
+        'hide_category_export_in_csv'   => 'Скрыть кнопку "Экспорт в CSV" для категорий',
         'hide_product_import_from_csv'  => 'Скрыть кнопку "Импорт из CSV" для товаров',
         'hide_product_import_from_xml'  => 'Скрыть кнопку "Импорт из XML" для товаров',
+        'hide_product_export_in_csv'    => 'Скрыть кнопку "Экспорт в CSV" для товаров',
         'hide_offer_import_from_csv'    => 'Скрыть кнопку "Импорт из CSV" для товарных предложений',
         'hide_offer_import_from_xml'    => 'Скрыть кнопку "Импорт из XML" для товарных предложений',
+        'hide_offer_export_in_csv'      => 'Скрыть кнопку "Экспорт в CSV" для товарных предложений',
         'hide_price_import_from_xml'    => 'Скрыть кнопку "Импорт из XML" для цен',
     ],
     'settings'    => [
@@ -132,7 +136,7 @@
         'name'       => 'региона',
         'list_title' => 'Список регионов',
     ],
-    'measure'        => [
+    'measure'     => [
         'name'       => 'ед. измерения',
         'list_title' => 'Список ед. измерения',
     ],
@@ -211,11 +215,13 @@
     ],
     'button'      => [
         'import_offer_button'   => 'Импортировать предложения из CSV',
+        'export_offer_button'   => 'Экспортировать предложения в CSV',
         'import_offer_from_xml' => 'Импортировать предложения из XML',
         'import_price_from_xml' => 'Импортировать цены из XML',
     ],
     'widget'      => [
         'import_from_xml_files' => 'Импорт из XML файла',
         'import_from_csv_files' => 'Импорт из CSV файла',
+        'export_in_csv_files'   => 'Экспорт в CSV файла',
     ],
 ];

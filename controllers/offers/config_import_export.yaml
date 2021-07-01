@@ -48,3 +48,44 @@ import:
         label: 'lovata.toolbox::lang.field.import_deactivate'
         comment: 'lovata.toolbox::lang.field.import_deactivate_description'
         type: checkbox
+export:
+  title: 'lovata.shopaholic::lang.offer.export_title'
+  modelClass: Lovata\Shopaholic\Models\OfferExport
+  redirect: lovata/shopaholic/products
+  fileName: offers.csv
+  list:
+    columns:
+      external_id:
+        label: 'lovata.toolbox::lang.field.external_id'
+      product_id:
+        label: 'lovata.shopaholic::lang.field.product_id'
+      active:
+        label: 'lovata.toolbox::lang.field.active'
+      name:
+        label: 'lovata.toolbox::lang.field.name'
+      code:
+        label: 'lovata.toolbox::lang.field.code'
+      price:
+        label: 'lovata.shopaholic::lang.field.price'
+      old_price:
+        label: 'lovata.shopaholic::lang.field.old_price'
+      quantity:
+        label: 'lovata.shopaholic::lang.field.quantity'
+      weight:
+        label: 'lovata.toolbox::lang.field.weight'
+      height:
+        label: 'lovata.toolbox::lang.field.height'
+      length:
+        label: 'lovata.toolbox::lang.field.length'
+      width:
+        label: 'lovata.toolbox::lang.field.width'
+      measure:
+        label: 'lovata.shopaholic::lang.field.measure'
+      quantity_in_unit:
+        label: 'lovata.shopaholic::lang.field.quantity_in_unit'
+      measure_of_unit:
+        label: 'lovata.shopaholic::lang.field.measure_of_unit'
+      preview_text:
+        label: 'lovata.toolbox::lang.field.preview_text'
+      description:
+        label: 'lovata.toolbox::lang.field.description'

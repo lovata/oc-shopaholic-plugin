@@ -1,0 +1,57 @@
+<?php
+$bHideOfferExportButton = \Lovata\Shopaholic\Models\Settings::getValue('hide_offer_export_in_csv');
+$bHideProductExportButton = \Lovata\Shopaholic\Models\Settings::getValue('hide_product_export_in_csv');
+$bHideBrandExportButton = \Lovata\Shopaholic\Models\Settings::getValue('hide_brand_export_in_csv');
+$bHideCategoryExportButton = \Lovata\Shopaholic\Models\Settings::getValue('hide_category_export_in_csv');
+$bHidePropertyExportButton = \Lovata\Shopaholic\Models\Settings::getValue('hide_property_export_in_csv') || !\System\Classes\PluginManager::instance()->hasPlugin('Lovata.PropertiesShopaholic');
+?>
+
+<div id="cachesizes" class="report-widget">
+    <h3>
+        <?= e(trans('lovata.shopaholic::lang.widget.export_in_csv_files')) ?>
+    </h3>
+    <div class="dropdown dropdown-fixed">
+        <button type="button" class="btn btn-default oc-icon-download" data-toggle="dropdown">
+            <?= e(trans('lovata.toolbox::lang.button.export_in_csv')) ?>
+        </button>
+        <ul class="dropdown-menu" data-dropdown-title="<?= e(trans('lovata.toolbox::lang.button.export_in_csv')) ?>">
+            <?php if (!$bHideProductExportButton) { ?>
+            <li>
+                <a href="<?= Backend::url('lovata/shopaholic/products/export') ?>" tabindex="-1"
+                   class="oc-icon-download">
+                    <?= e(trans('lovata.shopaholic::lang.menu.product')) ?>
+                </a>
+            </li>
+            <?php } ?>
+            <?php if (!$bHideOfferExportButton) { ?>
+            <li>
+                <a href="<?= Backend::url('lovata/shopaholic/offers/export') ?>" tabindex="-1" class="oc-icon-download">
+                    <?= e(trans('lovata.shopaholic::lang.tab.offer')) ?>
+                </a>
+            </li>
+            <?php } ?>
+            <?php if (!$bHideCategoryExportButton) { ?>
+            <li>
+                <a href="<?= Backend::url('lovata/shopaholic/categories/export') ?>" tabindex="-1"
+                   class="oc-icon-download">
+                    <?= e(trans('lovata.shopaholic::lang.menu.categories')) ?>
+                </a>
+            </li>
+            <?php } ?>
+            <?php if (!$bHideBrandExportButton) { ?>
+            <li>
+                <a href="<?= Backend::url('lovata/shopaholic/brands/export') ?>" tabindex="-1" class="oc-icon-download">
+                    <?= e(trans('lovata.shopaholic::lang.menu.brands')) ?>
+                </a>
+            </li>
+            <?php } ?>
+            <?php if (!$bHidePropertyExportButton) { ?>
+            <li>
+                <a href="<?= Backend::url('lovata/propertiesshopaholic/properties/export') ?>" tabindex="-1" class="oc-icon-download">
+                    <?= e(trans('lovata.propertiesshopaholic::lang.menu.property')) ?>
+                </a>
+            </li>
+            <?php } ?>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<?php Block::put('breadcrumb') ?>
+<ul>
+    <li><a href="<?= Backend::url('lovata/shopaholic/categories') ?>"><?= e(trans('lovata.shopaholic::lang.category.list_title')) ?></a></li>
+    <li><?= e($this->pageTitle) ?></li>
+</ul>
+<?php Block::endPut() ?>
+
+<?= Form::open(['class' => 'layout']) ?>
+
+<div class="layout-row">
+    <?= $this->exportRender() ?>
+</div>
+
+<div class="form-buttons">
+    <button
+        type="submit"
+        data-control="popup"
+        data-handler="onExportLoadForm"
+        data-keyboard="false"
+        class="btn btn-primary"
+        data-stripe-load-indicator
+    >
+        <?= e(trans('lovata.toolbox::lang.button.export_button')) ?>
+    </button>
+</div>
+
+<?= Form::close() ?>

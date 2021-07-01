@@ -201,7 +201,10 @@ class Plugin extends PluginBase
             ],
             'Lovata\Shopaholic\Widgets\ImportFromCSV' => [
                 'label' => 'lovata.shopaholic::lang.widget.import_from_csv_files',
-            ]
+            ],
+            'Lovata\Shopaholic\Widgets\ExportInCSV' => [
+                'label' => 'lovata.shopaholic::lang.widget.export_in_csv_files',
+            ],
         ];
     }
 }

@@ -20,19 +20,54 @@
         data-stripe-load-indicator>
             <?= e(trans('backend::lang.list.delete_selected')) ?>
     </button>
-    <?php if (!\Lovata\Shopaholic\Models\Settings::getValue('hide_brand_import_from_csv')) { ?>
-    <a href="<?= Backend::url('lovata/shopaholic/brands/import') ?>" class="btn btn-primary oc-icon-download">
-        <?= e(trans('lovata.toolbox::lang.button.import_from_csv')) ?>
-    </a>
-    <?php } ?>
-    <?php if (!\Lovata\Shopaholic\Models\Settings::getValue('hide_brand_import_from_xml')) { ?>
-    <button
-            class="btn btn-primary oc-icon-download"
-            data-request="onImportFromXML"
-            data-request-confirm="<?= e(trans('lovata.toolbox::lang.message.import_from_xml_confirm')) ?>"
-            data-stripe-load-indicator>
-        <?= e(trans('lovata.toolbox::lang.button.import_from_xml')) ?>
-    </button>
+    <?php if (!\Lovata\Shopaholic\Models\Settings::getValue('hide_brand_import_from_csv')
+        || !\Lovata\Shopaholic\Models\Settings::getValue('hide_brand_import_from_xml')
+        || !\Lovata\Shopaholic\Models\Settings::getValue('hide_brand_export_in_csv')
+    ) { ?>
+    <div class="dropdown dropdown-fixed">
+        <a href="#" data-toggle="dropdown" class="btn btn-primary">
+            <?= e(trans('lovata.toolbox::lang.button.import_export')) ?>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+            <?php if (!\Lovata\Shopaholic\Models\Settings::getValue('hide_brand_import_from_csv')) { ?>
+            <li>
+                <a href="<?= Backend::url('lovata/shopaholic/brands/import') ?>"
+                   class="oc-icon-download"
+                   tabindex="-1"
+                   role="menuitem"
+                >
+                    <?= e(trans('lovata.toolbox::lang.button.import_from_csv')) ?>
+                </a>
+            </li>
+            <?php } ?>
+            <?php if (!\Lovata\Shopaholic\Models\Settings::getValue('hide_brand_import_from_xml')) { ?>
+            <li>
+                <a
+                    href="#"
+                    tabindex="-1"
+                    role="menuitem"
+                    class="oc-icon-download"
+                    data-request="onImportFromXML"
+                    data-request-confirm="<?= e(trans('lovata.toolbox::lang.message.import_from_xml_confirm')) ?>"
+                    data-stripe-load-indicator
+                >
+                    <?= e(trans('lovata.toolbox::lang.button.import_from_xml')) ?>
+                </a>
+            </li>
+            <?php } ?>
+            <?php if (!\Lovata\Shopaholic\Models\Settings::getValue('hide_brand_export_in_csv')) { ?>
+            <li>
+                <a href="<?= Backend::url('lovata/shopaholic/brands/export') ?>"
+                   class="oc-icon-upload"
+                   tabindex="-1"
+                   role="menuitem"
+                >
+                    <?= e(trans('lovata.toolbox::lang.button.export_in_csv')) ?>
+                </a>
+            </li>
+            <?php } ?>
+        </ul>
+    </div>
     <?php } ?>
     <?= $this->fireViewEvent('lovata.backend.extend_list_toolbar', [$this]) ?>
 </div>
